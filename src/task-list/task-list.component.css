@@ -1,0 +1,33 @@
+.create-tasks {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  justify-content: space-between;
+}
+.submit {
+  width: 100px;
+}
+input {
+  width: 200px;
+  margin: 5px 0;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+td {
+  width: 100px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

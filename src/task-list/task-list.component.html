@@ -1,0 +1,34 @@
+<h2>Project Details</h2>
+
+<table>
+  <tr>
+    <td>Project</td>
+    <td>Client</td>
+    <td>Delete</td>
+    <td>Start</td>
+    <td>Stop</td>
+    <td>Time in ms</td>
+  </tr>
+  <tr *ngFor="let task of taskList; index as index">
+    <td>{{ task.project }}</td>
+    <td>{{ task.client }}</td>
+    <td><button (click)="deleteTask(index)">Delete</button></td>
+    <td><button (click)="startTimer(index)">Start</button></td>
+    <td><button (click)="stopTimer(index)">Stop</button></td>
+    <td>{{ task.totalTime }}</td>
+  </tr>
+</table>
+
+<h2>Task Creation</h2>
+<button (click)="showNewTaskItems()">Create New Task</button>
+
+<div *ngIf="createTask" class="create-tasks">
+  <input
+    type="text"
+    placeholder="Project Name"
+    (input)="manageAutoComplete()"
+    [(ngModel)]="project"
+  />
+  <input type="text" placeholder="Client Name" [(ngModel)]="client" />
+  <button (click)="createNewTask()" class="submit">Submit</button>
+</div>
